@@ -17,3 +17,163 @@
         <p class="relatorio__linha relatorio__linha--a"></p>
         <p class="relatorio__linha relatorio__linha--b"></p>
       </div>
+
+        `
+    <h2>Comparando oferta de cusos: ${unidadeA.cidade} vs ${unidadeB.cidade}...</h2>
+    <p>Juros de ${v2}% sobre o valor de R$ ${v1.toFixed(2)}.</p>
+    </div>
+    <ul>
+        <li>VALOR DO ACRÉSCIMO:</li>       
+        <li>R$ ${acrescimo.toFixed(2)}</li>
+        <li><span>VALOR TOTAL A PAGAR:</span></li>
+        <li><span>R$ ${(v1 + acrescimo).toFixed(2)}</span></li>
+    </ul>
+
+        <h2 class="relatorio__titulo">Análise Comparativa</h2>
+
+      <p class="relatorio__veredito"></p>
+
+      <div class="relatorio__detalhes">
+        <p class="relatorio__linha relatorio__linha--a"></p>
+        <p class="relatorio__linha relatorio__linha--b"></p>
+      </div>
+  <>h2>`
+
+      
+
+/* 🚨NÃO ALTERAR A CLASSE 🚨 */
+
+class Senai {
+  constructor(codigo, cidade, anoConstrucao, qtdeCursos) {
+    this.codigo = codigo;
+    this.cidade = cidade;
+    this.anoConstrucao = anoConstrucao;
+    this.qtdeCursos = qtdeCursos;
+
+    this.idade = new Date().getFullYear() - anoConstrucao;
+    this.statusFuncionamento = false;
+  }
+
+  abrirEscola() {
+    this.statusFuncionamento = true;
+  }
+
+  fecharEscola() {
+    this.statusFuncionamento = false;
+  }
+}
+
+/* 🚨NÃO ALTERAR A CLASSE 🚨 */
+
+/* SUGESTÃO DE LÓGICA PARA O DESENVOLVIMENTO */
+
+/* ===== OBTER ELEMENTOS ===== */
+let unidadeA
+let unidadeB
+
+
+const cidadeB = document.querySelector('.unidadeB__cidade').value;
+const codigoB = document.querySelector('.unidadeB__codigo').value;
+const anoB = document.querySelector('.unidadeB__ano').value;
+const cursosB = document.querySelector('.unidadeB__cursos').value;
+
+const resultadoA = document.querySelector('.unidadeA__mensagem');
+const resultadoB = document.querySelector('.unidadeB__mensagem');
+
+const btnInstanciarA = document.querySelector('.unidadeA__instanciar');
+const btnInstanciarB = document.querySelector('.unidadeB__instanciar');
+
+const btnAbrirUnidadeA = document.querySelector('.unidadeA__abrir');
+const btnAbrirUnidadeB = document.querySelector('.unidadeB__abrir');
+
+const btnFecharUnidadeA = document.querySelector('.unidadeA__fechar')
+const btnFecharUnidadeB = document.querySelector('.unidadeB__fechar')
+
+const btnComparar = document.querySelector('.botao--comparar')
+
+/* ===== FUNÇÃO DE VALIDAÇÃO ===== */
+function validarDados(cidade, codigo, ano, cursos) {
+  if (cidade === '' || codigo === '' || ano === '' || cursos === '') {
+    return false
+  } else {
+    return true
+  }
+};
+
+/* ===== INSTANCIAR ESCOLA A ===== */
+const instanciarEscolaA = () => {
+  const cidadeA = document.querySelector('.unidadeA__cidade').value;
+  const codigoA = document.querySelector('.unidadeA__codigo').value;
+  const anoA = document.querySelector('.unidadeA__ano').value;
+  const cursosA = document.querySelector('.unidadeA__cursos').value;
+  if (validarDados(cidadeA, codigoA, anoA, cursosA)) {
+    resultadoA.textContent = `True`
+    return new Senai(codigoA, cidadeA, anoA, cursosA);
+  } else {
+    resultadoA.textContent = "Preencha todos os campos para criar a escola."
+    return false
+  }
+}
+
+btnInstanciarA.addEventListener('click', () => {
+  unidadeA = instanciarEscolaA()
+})
+
+/* ===== INSTANCIAR ESCOLA B ===== */
+
+const instanciarEscolaB = () => {
+  const cidadeB = document.querySelector('.unidadeB__cidade').value;
+  const codigoB = document.querySelector('.unidadeB__codigo').value;
+  const anoB = document.querySelector('.unidadeB__ano').value;
+  const cursosB = document.querySelector('.unidadeB__cursos').value;
+  if (validarDados(cidadeB, codigoB, anoB, cursosB)) {
+    resultadoB.textContent = `True`
+    return new Senai(codigoB, cidadeB, anoB, cursosB);
+  } else {
+    resultadoB.textContent = "Preencha todos os campos para criar a escola."
+    return false
+  }
+}
+
+btnInstanciarB.addEventListener('click', () => {
+  unidadeB = instanciarEscolaB()
+})
+
+/* ===== ABRIR ESCOLA ===== */
+btnAbrirUnidadeA.addEventListener('click', () => {
+  unidadeA.abrirEscola()
+  resultadoA.textContent = `Aberta: Bem-vindos ao SENAI ${(unidadeA.cidade)}`
+});
+
+btnAbrirUnidadeB.addEventListener('click', () => {
+  unidadeB.abrirEscola()
+  resultadoB.innerHTML = `Aberta: Bem-vindos ao SENAI ${(unidadeB.cidade)}`
+});
+
+/* ===== FECHAR ESCOLA ===== */
+btnFecharUnidadeA.addEventListener('click', () => {
+  resultadoA.innerHTML = `Fechada: Atividades encerradas.`
+});
+btnFecharUnidadeB.addEventListener('click', () => {
+  resultadoB.innerHTML = `Fechada: Atividades encerradas.`
+});
+
+btnComparar.addEventListener('click', () => {
+  compararEscolas()
+})
+
+/* ===== RELATÓRIO DE COMPARAÇÃO ===== */
+const compararEscolas = () => {
+  console.log(`> Comparando oferta de cusos: ${unidadeA.cidade} vs ${unidadeB.cidade}...`)
+
+  if (unidadeA.qtdeCursos > unidadeB.qtdeCursos) return console.log(`Resultado: O SENAI ${unidadeA.cidade} possui mais cursos.`);
+  if (unidadeB.qtdeCursos > unidadeA.qtdeCursos) return console.log(`Resultado: O SENAI ${unidadeB.cidade} possui mais cursos.`);
+  else console.log(`Resultado: Ambas as unidades possuem a mesma quantidade de cursos.`);
+
+  console.log(`Status: ${unidadeA.cidade} (${unidadeA.qtdeCursos}) | ${unidadeB.cidade} (${unidadeB.qtdeCursos})\n`);
+};
+
+
+/* ===== NOVA CONSULTA ===== */
+
+
