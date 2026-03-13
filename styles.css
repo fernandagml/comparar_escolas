@@ -1,0 +1,237 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    :root{
+    
+    --cor-primaria:#0f4c8a;
+    --cor-secundaria:#f4f6f8;
+    --cor-fundo:#e8ebef;
+    
+    --cor-verde:#2fa866;
+    --cor-vermelho:#e74c3c;
+    --cor-amarelo:#f1c40f;
+    
+    --cor-texto:#333;
+    --cor-branco:#ffffff;
+    
+    --cor-borda:#dcdcdc;
+    
+    }
+    
+    body{
+    background:var(--cor-fundo);
+    color:var(--cor-texto);
+    }
+    
+    .sistema{
+    
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    
+    }
+    
+    .sistema__titulo{
+    
+    text-align:center;
+    color:var(--cor-primaria);
+    margin-bottom:40px;
+    
+    }
+    
+    .sistema__unidades{
+    
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    
+    }
+    
+    .unidade{
+    
+    background:var(--cor-branco);
+    padding:30px;
+    border-radius:10px;
+    width:400px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.1);
+    
+    }
+    
+    .unidade__titulo{
+    
+    margin-bottom:20px;
+    color:var(--cor-texto);
+    
+    }
+    
+    .unidade__input{
+    
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    
+    border-radius:6px;
+    border:1px solid var(--cor-borda);
+    
+    }
+    
+    .unidade__botao{
+    
+    width:100%;
+    padding:14px;
+    
+    background:var(--cor-primaria);
+    color:var(--cor-branco);
+    
+    border:none;
+    border-radius:6px;
+    
+    cursor:pointer;
+    
+    margin-bottom:15px;
+    
+    }
+    
+    .unidade__status{
+    
+    background:var(--cor-secundaria);
+    padding:12px;
+    border-radius:6px;
+    margin-bottom:15px;
+    
+    }
+    
+    .unidade__acoes{
+    
+    display:flex;
+    gap:10px;
+    
+    }
+    
+    .botao{
+    
+    flex:1;
+    padding:12px;
+    
+    border:none;
+    border-radius:6px;
+    
+    cursor:pointer;
+    color:var(--cor-branco);
+    
+    }
+    
+    .botao--abrir{
+    background:var(--cor-verde);
+    }
+    
+    .botao--fechar{
+    background:var(--cor-vermelho);
+    }
+    
+    .sistema__acoes{
+    
+    text-align:center;
+    margin-top:40px;
+    
+    }
+    
+    .botao--comparar{
+    
+    background:var(--cor-vermelho);
+    padding:15px 30px;
+    margin-right:20px;
+    
+    }
+    
+    .botao--reset{
+    
+    background:var(--cor-texto);
+    padding:15px 30px;
+    
+    }
+    
+    .relatorio{
+    
+    margin-top:40px;
+    background:var(--cor-branco);
+    padding:30px;
+    border-radius:10px;
+    
+    box-shadow:0 8px 18px rgba(0,0,0,0.1);
+    
+    }
+    
+    .relatorio--oculto{
+    display:none;
+    }
+    
+    .relatorio__titulo{
+    
+    margin-bottom:15px;
+    color:var(--cor-primaria);
+    
+    }
+    
+    .relatorio__veredito{
+    
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:20px;
+    
+    }
+    
+    .relatorio__detalhes{
+    
+    border-top:2px solid var(--cor-borda);
+    padding-top:15px;
+    
+    }
+    
+    .relatorio__linha{
+    
+    margin-bottom:10px;
+    
+    }
+    
+    .relatorio__destaque{
+    
+    font-weight:bold;
+    color:var(--cor-primaria);
+    
+    }
+    
+    /* STATUS */
+    
+    .status{
+    
+    padding:12px;
+    border-radius:6px;
+    font-weight:bold;
+    
+    }
+    
+    .status--aberto{
+    
+    background:#d4edda;
+    color:#155724;
+    
+    }
+    
+    .status--fechado{
+    
+    background:#f8d7da;
+    color:#721c24;
+    
+    }
+    
+    .status--criado{
+    
+    background:#fff3cd;
+    color:#856404;
+    
+    }

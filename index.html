@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Gestão de Unidades SENAI</title>
+  <!-- Arquivo de estilos-->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+<body>
+  <main class="sistema">
+    <h1 class="sistema__titulo">GESTÃO DE UNIDADES SENAI</h1>
+
+    <section class="sistema__unidades">
+      <div class="unidade">
+        <h2 class="unidade__titulo">Unidade A</h2>
+
+        <!--Campos para criar a escola 01 -->
+        <input class="unidade__input unidadeA__cidade" placeholder="Cidade" />
+        <input type="number" class="unidade__input unidadeA__codigo" placeholder="Código" />
+        <input type="number" class="unidade__input unidadeA__ano" placeholder="Ano de construção" />
+        <input type="number" class="unidade__input unidadeA__cursos" placeholder="Quantidade de cursos" />
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+        <button class="unidade__botao unidadeA__instanciar">INSTANCIAR ESCOLA</button>
+
+        <!-- Container para exibir as mensagens -->
+        <div class="unidade__status">
+          <p class="unidadeA__mensagem">Aguardando criação...</p>
+        </div>
+        <!-- Container para os botões que chamam os métodos -->
+        <div class="unidade__acoes">
+          <button class="botao botao--abrir unidadeA__abrir">ABRIR</button>
+          <button class="botao botao--fechar unidadeA__fechar">FECHAR</button>
+        </div>
+      </div>
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+      <div class="unidade">
+        <h2 class="unidade__titulo">Unidade B</h2>
+
+        <!--Campos para criar a escola 02 -->
+        <input class="unidade__input unidadeB__cidade" placeholder="Cidade" />
+        <input type="number" class="unidade__input unidadeB__codigo" placeholder="Código" />
+        <input type="number" class="unidade__input unidadeB__ano" placeholder="Ano de construção" />
+        <input type="number" class="unidade__input unidadeB__cursos" placeholder="Quantidade de cursos" />
+
+        <button class="unidade__botao unidadeB__instanciar">INSTANCIAR ESCOLA</button>
+
+        <div class="unidade__status">
+          <p class="unidadeB__mensagem">Aguardando criação...</p>
+        </div>
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+        <div class="unidade__acoes">
+          <button class="botao botao--abrir unidadeB__abrir">ABRIR</button>
+          <button class="botao botao--fechar unidadeB__fechar">FECHAR</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sistema__acoes">
+      <button class="botao botao--comparar sistema__comparar">COMPARAR UNIDADES</button>
+      <button class="botao botao--reset sistema__reset">NOVA CONSULTA</button>
+    </section>
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+    <section class="relatorio relatorio--oculto">
+
+      <h2 class="relatorio__titulo">Análise Comparativa</h2>
+
+      <p class="relatorio__veredito"></p>
+
+      <div class="relatorio__detalhes">
+        <p class="relatorio__linha relatorio__linha--a"></p>
+        <p class="relatorio__linha relatorio__linha--b"></p>
+      </div>
+
+    </section>
+  </main>
+<!-- 🚨NÃO ALTERAR O HTML🚨 -->
+  <script src="./comparar-escolas.js"></script>
+</body>
+
+</html>
