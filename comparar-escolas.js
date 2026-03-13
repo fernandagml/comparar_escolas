@@ -24,11 +24,7 @@ class Senai {
 
 /* 🚨NÃO ALTERAR A CLASSE 🚨 */
 
-
-
 /* SUGESTÃO DE LÓGICA PARA O DESENVOLVIMENTO */
-
-
 
 /* ===== OBTER ELEMENTOS ===== */
 const cidadeA = document.querySelector('.unidadeA__cidade');
@@ -44,32 +40,45 @@ const cursosB = document.querySelector('.unidadeB__cursos input[type="number"]')
 const resultadoA = document.querySelector('.unidadeA__mensagem');
 const resultadoB = document.querySelector('.unidadeB__mensagem');
 
-const instanciarA = document.querySelector('.unidadeA__instanciar');
-const instanciarB = document.querySelector('.unidadeB__instanciar');
+const btnInstanciarA = document.querySelector('.unidadeA__instanciar');
+const btnInstanciarB = document.querySelector('.unidadeB__instanciar');
+
+const btnAbrirUnidadeA = document.querySelector('.unidadeA__abrir');
+const btnAbrirUnidadeB = document.querySelector('.unidadeB__abrir');
+
+const btnFecharUnidadeA = document.querySelector('.unidadeA__fechar')
+const btnFecharUnidadeB = document.querySelector('.unidadeB__fechar')
 
 /* ===== FUNÇÃO DE VALIDAÇÃO ===== */
 function validarDados() {
-  // if ((isNaN(cidadeA) || isNaN(codigoA) || isNaN(anoA) || isNaN(cursosA)) || (isNaN(cidadeB) || isNaN(codigoB) || isNaN(anoB) || isNaN(cursosB))){
-  //   resultadoA.innerHTML = `Preencha todos os campos para criar a escola.`
-  // } else if (isNaN(cidadeB) || isNaN(codigoB) || isNaN(anoB) || isNaN(cursosB)) {
-  //   resultadoB.innerHTML = `Preencha todos os campos para criar a escola.`
-  // };
-  if ((isNaN(cidadeA) || isNaN(codigoA) || isNaN(anoA) || isNaN(cursosA)) || (isNaN(cidadeB) || isNaN(codigoB) || isNaN(anoB) || isNaN(cursosB))) return (resultadoA.innerHTML = `Preencha todos os campos para criar a escola.`) + (resultadoB.innerHTML = `Preencha todos os campos para criar a escola.`);
+  if ((isNaN(cidadeA) || isNaN(codigoA) || isNaN(anoA) || isNaN(cursosA)) || (isNaN(cidadeB) || isNaN(codigoB) || isNaN(anoB) || isNaN(cursosB)))
+  return (resultadoA.innerHTML = `Preencha todos os campos para criar a escola.`) + (resultadoB.innerHTML = `Preencha todos os campos para criar a escola.`);
 };
 
 /* ===== INSTANCIAR ESCOLA A ===== */
 const escolaA = new Senai(codigoA, cidadeA, anoA, cursosA);
-instanciarA.addEventListener('click', () => {validarDados()})
+btnInstanciarA.addEventListener('click', () => {validarDados()})
 
 /* ===== INSTANCIAR ESCOLA B ===== */
 const escolaB = new Senai(codigoB, cidadeB, anoB, cursosB);
-instanciarB.addEventListener('click', () => {validarDados()})
+btnInstanciarB.addEventListener('click', () => {validarDados()})
 
 /* ===== ABRIR ESCOLA ===== */
+btnAbrirUnidadeA.addEventListener('click', () => {
+  resultadoA.innerHTML = `Aberta: Bem-vindos ao SENAI ${cidadeA.value}`
+});
 
+btnAbrirUnidadeB.addEventListener('click', () => {
+  resultadoB.innerHTML = `Aberta: Bem-vindos ao SENAI ${cidadeB.value}`
+});
 
 /* ===== FECHAR ESCOLA ===== */
-
+btnFecharUnidadeA.addEventListener('click', () => {
+  resultadoA.innerHTML = `Fechada: Atividades encerradas.`
+});
+btnFecharUnidadeB.addEventListener('click', () => {
+  resultadoB.innerHTML = `Fechada: Atividades encerradas.`
+});
 
 /* ===== RELATÓRIO DE COMPARAÇÃO ===== */
 const compararEscolas = (e1, e2) => {

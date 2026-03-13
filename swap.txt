@@ -8,3 +8,12 @@
         <li><span>VALOR TOTAL A PAGAR:</span></li>
         <li><span>R$ ${(v1 + acrescimo).toFixed(2)}</span></li>
     </ul>
+
+        <h2 class="relatorio__titulo">Análise Comparativa</h2>
+
+      <p class="relatorio__veredito"></p>
+
+      <div class="relatorio__detalhes">
+        <p class="relatorio__linha relatorio__linha--a"></p>
+        <p class="relatorio__linha relatorio__linha--b"></p>
+      </div>
