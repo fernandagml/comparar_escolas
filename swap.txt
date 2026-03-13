@@ -1,0 +1,10 @@
+<div>
+        <h2>JUROS</h2>
+        <p>Juros de ${v2}% sobre o valor de R$ ${v1.toFixed(2)}.</p>
+    </div>
+    <ul>
+        <li>VALOR DO ACRÉSCIMO:</li>       
+        <li>R$ ${acrescimo.toFixed(2)}</li>
+        <li><span>VALOR TOTAL A PAGAR:</span></li>
+        <li><span>R$ ${(v1 + acrescimo).toFixed(2)}</span></li>
+    </ul>
